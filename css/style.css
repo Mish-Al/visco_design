@@ -5,123 +5,139 @@
   box-sizing: border-box;
   list-style-type: none;
   text-decoration: none;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-body {
-  /* height: 100vh; */
-  position: relative;
+header {
+  overflow: hidden;
 }
+html::-webkit-scrollbar {
+  display: none;
+}
+
+.container-front {
+  /* height: 5rem; */
+  /* border: 3px solid blue; */
+  z-index: 9999;
+  padding-top: 17rem;
+  margin-bottom: -22rem;
+}
+/* .cont-front{
+  padding-top: 17rem;
+  margin-bottom: -22rem;
+} */
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
-  border: 3px solid red;
+  /* width: 80%;
+  height: 80%; */
+  /* border: 3px solid red; */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-content: center;
-  /* position: relative; */
-  margin: auto;
 }
 
 /* Hide the images by default */
 .mySlides {
-  display: none;
+  width: 100%;
+  height: 40rem;
+}
+img {
+  z-index: -1;
 }
 
 /* Next & previous buttons */
-.prev, .next {
-  display: flex;
-  justify-content: center;
-
-  cursor: pointer;
-  /* position: absolute; */
-  /* top: 50%; */
-  width: auto;
-  /* margin-top: -22px; */
-  color: red;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-.container-front{
-  display: flex;
-  justify-content: left;
-  
-}
-.front{
-  background-color: #244ac2;
-}
-
-#landing{
-  border: 3px solid yellow;
-}
-
-.cont {
-  border: 3px solid brown;
-  width: 50%;
-  background-color: #244ac2;
-  position: absolute;
-  left: 0px;
-  top: 35%;
-  /* z-index: -1; */
-  }
-
-/* Position the "next button" to the right */
+.prev,
 .next {
-
-  border-radius: 3px 0 0 3px;
+  color: rgb(203, 199, 199);
+  /* position: absolute;  */
+  bottom: 10px;
+  height: 3rem;
+  left: 50%;
+  letter-spacing: 5px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.carousel {
+  z-index: -1;
+}
+.sec .front {
+  width: 600px;
+  height: 5rem;
+
+  left: 0%;
+
+  background-color: #244ac2;
+  z-index: 100;
+}
+.sec .back {
+  height: 5rem;
+
+  position: relative;
+  top: 16.2rem;
+
+  background-color: black;
+  z-index: -999;
 }
 
+/* Button Hover */
+.prev:hover,
+.next:hover {
+  color: rgba(81, 76, 76, 0.8);
+}
 
-/* The dots/bullets/indicators */
+.grid h4 {
+  text-transform: uppercase;
+}
+
+/* The dots */
 .dot {
   cursor: pointer;
   height: 15px;
   width: 15px;
   margin: 0 2px;
   background-color: #bbb;
-  border-radius: 50%;
+  border-radius: 100%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
-/* Fading animation */
+/* Carousel Animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-#end {
+.end {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
-#lower {
-  /* border: 3px solid rgb(250, 0, 250); */
-  width: 100%;
+.lower {
   display: flex;
+
   justify-content: center;
   margin-top: 1rem;
   gap: 20px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
 }
 .container {
   display: flex;
@@ -131,12 +147,13 @@ body {
   height: 10rem;
 }
 .containerlower {
-  width: 220px;
-  /* border: 3px solid red; */
+  width: 13rem;
+  margin: 7px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-content: center;
+  align-items: center;
   height: 2rem;
 }
 .container img {
@@ -145,27 +162,24 @@ body {
   margin-left: 3rem;
 }
 .containerlower img {
-  /* border: 3px solid blue; */
   display: flex;
   flex-direction: row;
   align-content: center;
   justify-content: space-around;
-  /* align-content: rig; */
-  /* margin: 1px; */
   height: 30px;
   width: 3rem;
 }
 #landing {
   display: flex;
+  position: relative;
   justify-content: center;
   align-content: center;
 }
 #landing img {
-  width: 70%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
 }
 .containerlower h3 {
-  /* border: 2px solid yellow; */
   color: #ffffff;
   margin-left: 5px;
   text-align: center;
@@ -176,19 +190,18 @@ body {
   color: #ffffff;
 }
 
-.navbar {
-  position: fixed;
-  /* top: 0;   */
+header .navbar {
+  position: absolute;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  margin: 20px;
   gap: 50rem;
 }
 
 #logo {
-  /* border: 3px solid red; */
   margin-top: 1rem;
   margin-left: 3rem;
   height: 3rem;
@@ -196,42 +209,40 @@ body {
 }
 
 .navbar-links {
-  /* border: 3px solid yellow; */
   display: flex;
   width: 50px;
-  max-width: 35%;
   justify-content: center;
   height: 100%;
 }
-#header {
-  position: sticky;
+.header {
+  height: 20vh;
+}
+.sec {
+  z-index: 3;
 }
 #middle {
   display: flex;
-  /* border: 3px solid green; */
 }
 p {
-  /* border: 3px solid red; */
   width: 60%;
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-left: 3rem;
   justify-content: left;
   align-content: center;
 }
 .img {
   height: 100%;
+  margin-top: 3rem;
 }
 #shapes {
+  margin-top: 1rem;
   height: 70%;
   width: 45%;
   justify-content: right;
-  /* align-content: center; */
 }
 
 i {
-  /* border: 3px solid green; */
   display: block;
-  /* padding: 2rem; */
   margin-top: 2rem;
   margin-left: 3rem;
   height: 100%;
@@ -242,7 +253,6 @@ i {
 
 @media (max-width: 650px) {
   .navbar-links {
-    /* display: none; */
     margin: 4px auto;
   }
 
